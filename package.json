@@ -1,0 +1,20 @@
+{
+  "name": "lang-nodejs",
+  "description": "Some enhancements to the JavaScript language for Node.js",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tpeden/lang-nodejs"
+  },
+  "author": "TJ Peden <tj.peden@tj-coding.com>",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": ["hash", "range", "enumerable", "pluck", "inject"],
+  "main": "lang.node.js",
+  "engines": { "node": ">= 0.2.0" }
+}
