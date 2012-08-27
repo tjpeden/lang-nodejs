@@ -35,10 +35,6 @@ Object.extend(Object.prototype, {
       }
     }
     return response;
-  },
-  tap: function(callback) {
-    callback(this);
-    return this;
   }
 });
 
