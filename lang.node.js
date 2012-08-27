@@ -90,6 +90,10 @@ var Enumerable = {
     }).pluck('value');
   },
   
+  maxBy: function(iterator) {
+    return sortBy(iterator).last
+  },
+  
   toArray: function() {
     return this.map();
   }
