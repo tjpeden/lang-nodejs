@@ -21,6 +21,15 @@ describe('Object', function() {
       result.should.eql(2);
     });
   });
+  
+  describe('#tap()', function() {
+    it("should allow you to call things and chain and stuff...", function() {
+      var obj = {};
+      obj.tap(function(self) {
+        self.awesome = true;
+      });
+    });
+  });
 });
 
 describe('Array', function() {

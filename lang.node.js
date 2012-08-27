@@ -25,7 +25,7 @@ Object.extend = function(destination) {
 };
 
 Object.extend(Object.prototype, {
- _send: function(message) {
+  _send: function(message) {
     var response = this[message];
     if(response instanceof Function) {
       var args = $A(arguments).slice(1);
@@ -138,6 +138,12 @@ Object.defineProperty(Array.prototype, 'last', {
  */
 
 function Hash(object) {
+  if(object instanceof Array && object.first instanceof Array) {
+    object = object.inject({}, function(o, a) {
+      o[a.first] = a.first in o ? o[a.first] + a.last : a.last;
+      return o;
+    });
+  }
   this._object = object;
 }
 
@@ -229,8 +235,8 @@ Object.extend(String.prototype, {
     return this.indexOf(pattern) > -1;
   },
   
-  toInt: function(radix) {
-    radix = radix || 10;
+  toInt: function() {
+    var radix = $A(arguments).first || 10;
     return parseInt(this, radix);
   },
   
@@ -248,4 +254,13 @@ Object.defineProperty(String.prototype, 'toProc', {
       });
     };
   }
+});
+
+Object.extend(global, {
+  Enumerable: Enumerable,
+  Range: Range,
+  Hash: Hash,
+  $A: $A,
+  $R: $R,
+  $H: $H
 });

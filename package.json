@@ -12,7 +12,8 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "restler": "*"
   },
   "keywords": ["hash", "range", "enumerable", "pluck", "inject"],
   "main": "lang.node.js",
